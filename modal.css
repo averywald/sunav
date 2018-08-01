@@ -1,0 +1,117 @@
+/* 
+modal.css
+for Sun Aviation, Inc.
+created by Avery Wald on 7/19/18
+Copyright (c) Sun Aviation, Incorporated
+All rights reserved.
+*/
+
+/* stylesheet reset */
+* {
+    /* flexbox */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* styling */
+    font-family: 'Segoe UI', 'Gill Sans';
+    outline: none;
+}
+
+/* remove all button styling */
+button {
+    /* display */
+    justify-content: center;
+    /* sizing */
+    padding: auto;
+    /* styling */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: grey;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #5c1eac;
+    transition: .3s ease;
+}
+
+/* the entire modal box */
+div#modalContainer {
+    /* display properties */
+    align-items: center;
+    justify-content: center;
+    /* sizing */
+    width: 80vw;
+    max-width: 1000px;
+    height: 80vw;
+    padding: 1vw;
+    /* styling */
+    background-color: #e9e9e9;
+    border-top: 4px solid #5c1eac;
+}
+
+/* relative vertical-sizing of divs.stripe */
+#modalContainer div:nth-of-type(2) { flex-grow: 5; }
+#modalContainer div:nth-of-type(3) { flex-grow: .5; }
+
+/* 
+    main divs in modal box
+    of class 'stripe'
+*/
+div.stripe {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+div#a {
+    width: 100%;
+    margin-bottom: 1vw;
+    ;
+}
+
+/* indiv. styling for the divs */
+div#a button#exitButton {
+    width: 2.5em;
+    height: 2.5em;
+    align-content: center;
+    justify-content: center;
+}
+
+button#exitButton i {
+    font-size: 2.5em;
+}
+
+/* middle div w/ content */
+div#b {
+    width: 100%;
+}
+
+#b div {
+    align-items: center;
+    justify-content: center;
+}
+
+#b div > button {
+    width: inherit;
+    height: inherit;
+    font-size: 2em;
+}
+
+/* relative horizontal-sizing of divs.stripe */
+#b div:nth-of-type(1) { flex-grow: .25; }
+#b div:nth-of-type(2) { flex-grow: 5; }
+#b div:nth-of-type(3) { flex-grow: .25; }
+
+/* bottom stripe div */
