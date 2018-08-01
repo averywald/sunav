@@ -1,0 +1,157 @@
+<!--
+    - index.html
+    - for Sun Aviation, Inc.
+    - created by Avery Wald on 5/18/18
+    - Copyright (c) Sun Aviation, Incorporated
+    - All rights reserved.
+-->
+
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Home - Sun Aviation</title>
+        <!-- favicon link-->
+        <link rel="shortcut icon" type="img/png" href="../pictures/favicon.png"  sizes="16x16">
+        <!-- link to .css stylesheets -->
+        <link rel="stylesheet" href="../cssFiles/headerFooterStyleSheet.css">
+        <link rel="stylesheet" href="../cssFiles/index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+        <!-- logo -->
+        <div class="logo">
+            <a href="../htmlFiles/index.html">
+                <img src="../pictures/sunAvLogo.png" alt="SunAV">
+            </a>
+        </div>
+        <!-- top navbar-->
+        <nav class="topNav">
+            <!-- link buttons -->
+            <div class="links">
+                    <ul>
+                        <li><a href="../htmlFiles/about.html">ABOUT</a></li>
+                        <li><a href="../htmlFiles/contact.html">CONTACT</a></li>
+                        <li><a href="../htmlFiles/products.html">PRODUCTS</a>
+                            <ul>
+                                <li><a href="../searchEngine/searchByProduct.php?search=1&submit=search">Altitude Encoders</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=2&submit=search">Antennas</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=3&submit=search">Avionics Supplies/Accessories</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=4&submit=search">Compasses</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=5&submit=search">Electronic & Engine Instruments</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=6&submit=search">Emergency Locator Transmitters</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=7&submit=search">Gyro & Flight Instruments</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=8&submit=search">Lighting</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=9&submit=search">Power Supplies & APU/GPUs</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=10&submit=search">Radios & Flight Controls</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=11&submit=search">Test Equipment</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+            <!-- search bar -->
+            <div class="searchContainer">
+                <form class="example" action="../searchEngine/search.php" method="GET">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+                <input name="search" type="text" placeholder="search sunav.com...">
+                <!-- search button -->
+                <button name="submit" type="submit" value="search">
+                    <i class="fa fa-search"></i>
+                </button>
+                </form>
+            </div>
+        </nav>  
+        <!-- scroll button -->
+        <div id="scrollContainer"
+            ><button id="scrollButton" onclick="topFunction()">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </head>
+<!-- =================================================== -->
+    <body>
+        <div id="content">
+            <div class="landing" id="landingTop">
+                <span>
+                    <h1>SUN AVIATION</h1>
+                </span>
+            </div>
+            <div id="blurb">
+                <h1>"For all your aviation needs ... think Sun!"</h1>
+                <p>
+                    Since our founding in 1975, Sun Aviation has been a family-owned and operated avionics dealer, aiming to provide quality parts to customers around the world.  
+                    <br>
+                    <br>
+                    This tradition of quality assurance and excellent customer service has carried over into the second generation of family ownership and management, and we intend to continue upholding this attitude without cutting corners.
+                </p>
+            </div>
+            <!-- parallax background -->
+            <div class="parallax" id="background1"></div>
+            <!-- text -->
+            <div id="services">
+                <h1>What sets Sun Aviation apart</h1>
+                <span>
+                    <h1>Dedicated Staff</h1>
+                    <i class="fas fa-people-carry"></i>
+                    <p>
+                        From Sales to Shipping and Recieving, our team members are devoted to ensuring your experience with Sun Aviation is smooth, prompt and satisfactory every step of the way.
+                    </p>
+                </span>
+                <span>
+                    <h1>Quality Assurance</h1>
+                    <i class="far fa-check-circle"></i>
+                    <p>
+                        Every product that we ship to you is tested for quality assurance by Sun Aviation staff to guarantee that you get what you pay for, and nothing less.
+                    </p>
+                </span>
+                <span>
+                    <h1>Unmatched Service</h1>
+                    <i class="fa fa-handshake"></i>
+                    <p>
+                        The entire Sun Aviation team appreciates your business with us, and we want you to know it.  Our pride lies within our ability to assist you in any way we can. If you have any inqueries, a trained staff member is merely a phone call, email or message away.
+                    </p>
+                </span>
+            </div>
+            <!-- parallax background -->
+            <div class="parallax" id="background2"></div>
+        </div>
+<!-- =================================================== -->
+        <!-- footer -->
+        <footer>
+            <!-- footer navbar -->
+            <nav class="botNav">
+                <ul>
+                    <li><a href="../htmlFiles/index.html">HOME</a></li>
+                    <li><a href="../htmlFiles/about.html">ABOUT</a></li>
+                    <li><a href="../htmlFiles/contact.html#bodyText">ORDER</a></li>
+                    <li><a href="../htmlFiles/products.html">PRODUCTS</a></li>
+                </ul>
+            </nav>
+            <!-- footer info cell -->
+            <div class="footerContent">
+                <h3>Contact Us</h3>
+                <div class="footerInfo">
+                    <div class="address">
+                        <p>Sun Aviation, Inc.</p>
+                        <p>P.O. Box 11618</p>
+                        <p>The Sun Aviation Building, 10010 E 87th Street</p>
+                        <p>Kansas City, Missouri, USA 64138</p>
+                    </div>
+                    <div class="contactInfo">
+                        <br>
+                        <br>
+                        <p>Phone: 816-358-4925</p>
+                        <p>Email:
+                            <a href="mailto:info@sunav.com">info@sunav.com</a>
+                        </p>
+                        <p>Fax: 816-737-0658</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- slideShow javascript link -->
+        <script src="../javascriptFiles/slideShow.js"></script>
+        <!-- backToTop javascript link -->
+        <script src="../javascriptFiles/backToTop.js"></script>
+    </body>
+</html>
