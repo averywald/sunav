@@ -12,17 +12,17 @@
     <head>
         <title>Search - Sun Aviation</title>
         <!-- favicon link-->
-        <link rel="shortcut icon" type="img/png" href="../pictures/favicon.png"  sizes="16x16">
+        <link rel="shortcut icon" type="img/png" href="../../pictures/favicon.png"  sizes="16x16">
         <!-- link to .css stylesheets -->
-        <link rel="stylesheet" href="../cssFiles/headerFooterStyleSheet.css">
-        <link rel="stylesheet" href="../cssFiles/searchPageStyleSheet.css">
+        <link rel="stylesheet" href="../../cssFiles/headerFooterStyleSheet.css">
+        <link rel="stylesheet" href="../../cssFiles/searchPageStyleSheet.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
         <!-- logo -->
         <div class="logo">
-            <a href="../htmlFiles/index.html">
-                <img src="../pictures/sunAvLogo.png" alt="SunAV">
+            <a href="../../htmlFiles/index.html">
+                <img src="../../pictures/sunAvLogo.png" alt="SunAV">
             </a>
         </div>
         <!-- top navbar-->
@@ -30,21 +30,21 @@
             <!-- link buttons -->
             <div class="links">
                     <ul>
-                        <li><a href="../htmlFiles/about.html">ABOUT</a></li>
-                        <li><a href="../htmlFiles/contact.html">CONTACT</a></li>
-                        <li><a href="../htmlFiles/products.html">PRODUCTS</a>
+                        <li><a href="../../htmlFiles/about.html">ABOUT</a></li>
+                        <li><a href="../../htmlFiles/contact.html">CONTACT</a></li>
+                        <li><a href="../../htmlFiles/products.html">PRODUCTS</a>
                             <ul>
-                                <li><a href="../searchEngine/searchByProduct.php?search=1&submit=search">Altitude Encoders</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=2&submit=search">Antennas</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=3&submit=search">Avionics Supplies/Accessories</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=4&submit=search">Compasses</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=5&submit=search">Electronic & Engine Instruments</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=6&submit=search">Emergency Locator Transmitters</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=7&submit=search">Gyro & Flight Instruments</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=8&submit=search">Lighting</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=9&submit=search">Power Supplies & APU/GPUs</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=10&submit=search">Radios & Flight Controls</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=11&submit=search">Test Equipment</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=1&submit=search">Altitude Encoders</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=2&submit=search">Antennas</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=3&submit=search">Avionics Supplies/Accessories</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=4&submit=search">Compasses</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=5&submit=search">Electronic & Engine Instruments</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=6&submit=search">Emergency Locator Transmitters</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=7&submit=search">Gyro & Flight Instruments</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=8&submit=search">Lighting</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=9&submit=search">Power Supplies & APU/GPUs</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=10&submit=search">Radios & Flight Controls</a></li>
+                                <li><a href="../../searchEngine/searchByProduct.php?search=11&submit=search">Test Equipment</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -53,9 +53,7 @@
             <div class="searchContainer">
                 <!-- self - referencing search form -->
                 <form class="example" action="" method="GET">
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-                integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-                crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <input name="search" type="text" placeholder="search sunav.com...">
                 <!-- search button -->
                 <button name="submit" type="submit" value="search">
@@ -78,6 +76,7 @@
         require 'searchConfig.php';
 
         // if search button pressed
+        // and search field is not empty
         if (isset($_GET['submit']) && !empty($_GET['search'])) {
             // connect to database
             $pdo = new PDO($dsn, $user, $password);
@@ -165,7 +164,7 @@
                 ?>
                 <div class="resultBox">
                     <div class="imageContainer">
-                        <?php echo "<img src='$imagePath' width='100%' height='100%'>"?>
+                        <?php echo "<img src='$imagePath'>"?>
                         <div class="overlay">
                             <?php echo "<h3>" . $result["company"] . "</h3>" ?>
                             <?php echo "<h3>" . $result["partNumber"] . "</h3>" ?>
@@ -203,10 +202,10 @@
             <!-- footer navbar -->
             <nav class="botNav">
                 <ul>
-                    <li><a href="../htmlFiles/index.html">HOME</a></li>
-                    <li><a href="../htmlFiles/about.html">ABOUT</a></li>
-                    <li><a href="../htmlFiles/contact.html#viewPortSpanner">ORDER</a></li>
-                    <li><a href="../htmlFiles/products.html">PRODUCTS</a></li>
+                    <li><a href="../../htmlFiles/index.html">HOME</a></li>
+                    <li><a href="../../htmlFiles/about.html">ABOUT</a></li>
+                    <li><a href="../../htmlFiles/contact.html#viewPortSpanner">ORDER</a></li>
+                    <li><a href="../../htmlFiles/products.html">PRODUCTS</a></li>
                 </ul>
             </nav>
             <!-- footer info cell -->
