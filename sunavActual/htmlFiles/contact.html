@@ -1,0 +1,210 @@
+<!--
+    - contact.html
+    - for Sun Aviation, Inc.
+    - created by Avery Wald on 5/24/18
+    - Copyright (c) Sun Aviation, Incorporated
+    - All rights reserved.
+-->
+
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Contact - Sun Aviation</title>
+        <!-- favicon link-->
+        <link rel="shortcut icon" type="img/png" href="../pictures/favicon.png"  sizes="16x16">
+        <!-- link to .css stylesheets -->
+        <link rel="stylesheet" href="../cssFiles/headerFooterStyleSheet.css">
+        <link rel="stylesheet" href="../cssFiles/contact.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+        <!-- logo -->
+        <div class="logo">
+            <div id="image">
+                <a href=".../htmlFiles/index.html">
+                    <img src="../pictures/sunAvLogo.png" alt="SunAV">
+                </a>
+            </div>
+        </div>
+        <!-- top navbar-->
+        <nav class="topNav">
+            <!-- link buttons -->
+            <div class="links">
+            <ul>
+                <li><a href="../htmlFiles/about.html">ABOUT</a></li>
+                <li><a href="../htmlFiles/contact.html">CONTACT</a></li>
+                <li><a href="../htmlFiles/products.html">PRODUCTS</a>
+                    <ul>
+                        <li><a href="../searchEngine/searchByProduct.php?search=1&submit=search">Altitude Encoders</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=2&submit=search">Antennas</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=3&submit=search">Avionics Supplies/Accessories</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=4&submit=search">Compasses</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=5&submit=search">Electronic & Engine Instruments</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=6&submit=search">Emergency Locator Transmitters</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=7&submit=search">Gyro & Flight Instruments</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=8&submit=search">Lighting</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=9&submit=search">Power Supplies & APU/GPUs</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=10&submit=search">Radios & Flight Controls</a></li>
+                        <li><a href="../searchEngine/searchByProduct.php?search=11&submit=search">Test Equipment</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+            <!-- search bar -->
+            <div class="searchContainer">
+                <form class="example" action="../searchEngine/search.php" method="GET">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+                <input name="search" type="text" placeholder="search sunav.com...">
+                <!-- search button -->
+                <button name="submit" type="submit" value="search">
+                    <i class="fa fa-search"></i>
+                </button>
+                </form>
+            </div>
+        </nav>
+        <!-- scroll button -->
+        <div id="scrollContainer"
+            ><button id="scrollButton" onclick="topFunction()">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div> 
+    </head>
+<!-- ======================================================================================================================== -->
+    <body>
+        <div id="content">
+            <h1>Order Process</h1>
+                <div id="wrapper">
+                    <div class="box">
+                        <button class="accordion">
+                            1. Contact our Office
+                        </button>
+                        <div class="panel">
+                            <h3>Call Us</h3>
+                            <p>(816)-358-4925</p>
+                            <h3>Email</h3>
+                            <p>info@sunav.com</p>
+                            <h3>International Fax</h3>
+                            <p>(816)-737-0658</p>
+                            <h3>Domestic Fax</h3>
+                            <p>(816)-358-2085</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <button class="accordion">
+                            2. Specify the Product
+                        </button>
+                        <div class="panel">
+                            <h3>Give an Accurate Description</h3>
+                            <p>Part Number</p>
+                            <p>Model Number</p>
+                            <p>Color</p>
+                            <p>Voltage</p>
+                            <p>Any defining feature, such as panel tilt, etc.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <button class="accordion">
+                            3. Request the Condition
+                        </button>
+                        <div class="panel">
+                            <h3>Condition Codes</h3>
+                            <p>AR: As Removed</p>
+                            <p>FN: Factory New</p>
+                            <p>NS: New Surplus</p>
+                            <p>OHC: Overhauled Condition</p>
+                            <p>SVC: Serviceable</p>
+                            <p>US: Unserviceable</p>
+                        </div>
+                    </div>
+                </div>
+            <div id="textBox">
+                <h1>Note</h1>
+                <p>
+                    Using a purchase order or reference number speeds up order processing.  
+                    Please assist us in providing unparalleled customer service by giving
+                    your complete address, including a Contact name, phone and/or fax 
+                    numbers, and email address.
+                </p>
+            </div>
+            <!-- order form -->
+            <div id="bodyText">
+                <h1>Order & Quote Request Form</h1>
+                <p>Fill out the form and a Sun Aviation specialist
+                    will contact you promptly during business hours
+                    to complete your order, or provide a quote
+                    estimate.
+                </p>
+                <div id="formContainer">
+                    <form id="orderForm" method="POST" action="../../phpFiles/upload.php">
+                        <input type="text" name="name" placeholder="customer name">
+                        <span class="error"><?php echo $nameError;?></span>
+                        <input type="text" name="company" placeholder="company name">
+                        <span class="error"><?php echo $companyError;?></span>
+                        <input type="text" name="address" placeholder="address">
+                        <span class="error"><?php echo $addressError;?></span>
+                        <input type="text" name="email" placeholder="email">
+                        <span class="error"><?php echo $emailError;?></span>
+                        <input type="text" name="phone" placeholder="phone number">
+                        <span class="error"><?php echo $phoneError;?></span>
+                        <input type="text" name="refNum" placeholder="your reference number">
+                        <span class="error"><?php echo $refNumError;?></span>
+                        <p>
+                            * For multiple items, enter part numbers
+                            and their quantities as comma-separated lists
+                        </p>
+                        <input type="text" name="partNum" placeholder="part number(s)">
+                        <span class="error"><?php echo $partNumError;?></span>
+                        <input type="text" name="quantity" placeholder="quantity">
+                        <span class="error"><?php echo $quantityError;?></span>
+                        <p>
+                            * To submit a quote estimate request, please specify in the comments box below
+                        </p>
+                        <input type="text" name="comments" placeholder="additional comments">
+                        <button name="upload" type="submit" value="place order">
+                            <p>Submit Order</p>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+<!-- ======================================================================================================================== -->
+        <!-- footer -->
+        <footer>
+            <!-- footer navbar -->
+            <nav class="botNav">
+                <ul>
+                    <li><a href="../htmlFiles/index.html">HOME</a></li>
+                    <li><a href="../htmlFiles/about.html">ABOUT</a></li>
+                    <li><a href="../htmlFiles/contact.html#bodyText">ORDER</a></li>
+                    <li><a href="../htmlFiles/products.html">PRODUCTS</a></li>
+                </ul>
+            </nav>
+            <!-- footer info cell -->
+            <div class="footerContent">
+                <h3>Contact Us</h3>
+                <div class="footerInfo">
+                    <div class="address">
+                        <p>Sun Aviation, Inc.</p>
+                        <p>P.O. Box 11618</p>
+                        <p>The Sun Aviation Building, 10010 E 87th Street</p>
+                        <p>Kansas City, Missouri, USA 64138</p>
+                    </div>
+                    <div class="contactInfo">
+                        <br>
+                        <br>
+                        <p>Phone: 816-358-4925</p>
+                        <p>Email:
+                            <a href="mailto:info@sunav.com">info@sunav.com</a>
+                        </p>
+                        <p>Fax: 816-737-0658</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- accordion javascript link -->
+        <script src="../javascriptFiles/accordion.js"></script>
+        <!-- backToTop javascript link -->
+        <script src="../javascriptFiles/backToTop.js"></script>
+    </body>
+</html>

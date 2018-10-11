@@ -1,0 +1,85 @@
+<!-- modal.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css links -->
+    <link rel="stylesheet" href="../../cssFiles/modal.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+
+    <title>Modal Design</title>
+
+</head>
+<!-- 
+    everything in the body 
+    will be contained within 
+    a div in 
+    'search.php'
+    or
+    'searchByProduct.php'
+    the final version will
+    look different, as it
+    will contain php code
+    that allows for the 
+    relevant info to be
+    displayed
+-->
+<body>
+
+    <!-- js script link -->
+    <script src="../../javascriptFiles/modal.js"></script>
+
+    <!-- the boundary of the modal -->
+    <div id="modalContainer" class="flexBox">
+        <!-- top 'block' container -->
+        <div id="a" class="flexBox stripe">
+            <!-- contains the exit glyph -->
+            <button id="exitButton" onclick="closeModal()">
+                <!-- exit glyph -->
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- middle 'block' container  -->
+        <div id="b" class="flexBox stripe">
+            <!-- prev button -->
+            <div id="prev" class="controls">
+                <button class="controls">
+                    <!-- prev glyph -->
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <!-- content container -->
+            <div id="content">
+
+            </div>
+            <!-- next button -->
+            <div id="next" class="controls">
+                <button class="controls">
+                    <!-- next glyph -->
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- bottom 'block' container -->
+        <div id="c" class="flexBox stripe">
+            <!-- links to relevant products -->
+            <!-- *** FIX LINKS *** -->
+            <a href="../../searchEngine/search.php">
+                See more ... here
+            </a>
+            <a href="../../searchEngine/search.php">
+                See more ... here
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
