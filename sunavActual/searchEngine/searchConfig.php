@@ -8,9 +8,9 @@
  */
 
 // phpMyAdmin datbase credentials
-$host = 'localhost';
-$user = 'root';
-$password = 'main';
+$host = 'mysqlcluster4.registeredsite.com';
+$user = 'averywald';
+$password = 'Gorilla333';
 $dbname = 'sunaviation';
 $charset = 'utf8';
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";

@@ -10,6 +10,15 @@
 <html>
     <meta charset="utf-8">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127575758-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-127575758-1');
+        </script>
+
         <title>Search - Sun Aviation</title>
         <!-- favicon link-->
         <link rel="shortcut icon" type="img/png" href="../pictures/favicon.png"  sizes="16x16">
@@ -87,8 +96,8 @@
             $search = $_GET['search'];
 
             // direct `products` table search
-            $sql = "SELECT company, description, image, partNumber
-            FROM `products` 
+            $sql = "SELECT manufacturer, description, image, partNumber
+            FROM `Products` 
             WHERE company LIKE '%{$search}%'
             OR description LIKE '%{$search}%'
             OR partNumber LIKE '%{$search}%'";
