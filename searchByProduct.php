@@ -10,9 +10,18 @@
 <html>
     <meta charset="utf-8">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127575758-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-127575758-1');
+        </script>
+
         <title>Search - Sun Aviation</title>
         <!-- favicon link-->
-        <link rel="shortcut icon" type="img/png" href="../pictures/favicon.png"  sizes="16x16">
+        <link rel="shortcut icon" type="img/png" href="../../pictures/favicon.png"  sizes="16x16">
         <!-- link to .css stylesheets -->
         <link rel="stylesheet" href="../cssFiles/headerFooterStyleSheet.css">
         <link rel="stylesheet" href="../cssFiles/searchPageStyleSheet.css">
@@ -21,11 +30,11 @@
         crossorigin="anonymous">
         <!-- logo -->
         <div class="logo">
-            <a href="../htmlFiles/index.html">
+            <a href="../index.html">
                 <img src="../pictures/sunAvLogo.png" alt="SunAV">
             </a>
         </div>
-        <!-- top navbar -->
+        <!-- top navbar-->
         <nav class="topNav">
             <!-- link buttons -->
             <div class="links">
@@ -37,14 +46,11 @@
                                 <li><a href="../searchEngine/searchByProduct.php?search=1&submit=search">Altitude Encoders</a></li>
                                 <li><a href="../searchEngine/searchByProduct.php?search=2&submit=search">Antennas</a></li>
                                 <li><a href="../searchEngine/searchByProduct.php?search=3&submit=search">Avionics Supplies/Accessories</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=4&submit=search">Compasses</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=5&submit=search">Electronic & Engine Instruments</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=6&submit=search">Emergency Locator Transmitters</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=7&submit=search">Gyro & Flight Instruments</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=8&submit=search">Lighting</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=9&submit=search">Power Supplies & APU/GPUs</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=10&submit=search">Radios & Flight Controls</a></li>
-                                <li><a href="../searchEngine/searchByProduct.php?search=11&submit=search">Test Equipment</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=4&submit=search">Emergency Locator Transmitters</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=5&submit=search">Instruments</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=6&submit=search">Lighting</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=7&submit=search">Power Supplies & APU/GPUs</a></li>
+                                <li><a href="../searchEngine/searchByProduct.php?search=8&submit=search">Test Equipment</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -53,9 +59,7 @@
             <div class="searchContainer">
                 <!-- self - referencing search form -->
                 <form class="example" action="search.php" method="GET">
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-                integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-                crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <input name="search" type="text" placeholder="search sunav.com...">
                 <!-- search button -->
                 <button name="submit" type="submit" value="search">
@@ -98,36 +102,31 @@
                 $searchTerm = 'Avionics Supplies & Accessories';
                 break;
             case 4:
-                $searchTerm = 'Compasses';
-                break;
-            case 5:
-                $searchTerm = 'Electronic & Engine Instruments';
-                break;
-            case 6:
                 $searchTerm = 'Emergency Locator Transmitters';
                 break;
-            case 7:
-                $searchTerm = 'Gyro & Flight Instruments';
+            case 5:
+                $searchTerm = 'Instruments';
                 break;
-            case 8:
+            case 6:
                 $searchTerm = 'Lighting';
                 break;
-            case 9:
-                $searchTerm = 'Power Supplies & APUs/GPUs';
+            case 7:
+                $searchTerm = 'Power Supplies, APUs & GPUs';
                 break;
-            case 10:
-                $searchTerm = 'Radios & Flight Controls';
-                break;
-            case 11:
+            case 8:
                 $searchTerm = 'Test Equipment';
                 break;
         }
 
         // get search term indexed by code
-        $sql = "SELECT productindex.partType, product, products.partNumber, products.company, products.description, products.image
-                FROM `productindex`
-                JOIN `products` ON productindex.partType = products.partType
-                WHERE products.partType = '$search'";
+        $sql = "SELECT Manufacturers.name, 
+                    Products.partNumber,
+                    Products.image,
+                    Products.description
+                FROM `Manufacturers`
+                INNER JOIN `Products`
+                ON Manufacturers.indexCode = Products.manufacturerCode
+                WHERE Products.productType LIKE '{$search}'";
 
         // compile the search results
         $results = $pdo->query($sql);
@@ -142,7 +141,6 @@
             </div>
             <?php
         }
-
         // 1 result
         else if ($results->rowCount() == 1) {
             ?>
@@ -151,7 +149,6 @@
             </div>
             <?php
         }
-    
         // multiple results
         else {
             ?>
@@ -160,7 +157,6 @@
             </div>
             <?php
         }
-
         // if no results, dont display info/order sheet link
         if ($results->rowCount() == 0) {
             ?>
@@ -198,8 +194,8 @@
                 <div class="resultBox">
                     <div class="imageContainer">
                         <?php echo "<img src='$imagePath' width='200px' height='200px'>" ?>
-                        <div class="overlay" onclick='openModal()'>
-                            <?php echo "<h3>" . $result["company"] . "</h3>" ?>
+                        <div class="overlay" onclick="openModal()">
+                            <?php echo "<h3>" . $result["name"] . "</h3>" ?>
                             <?php echo "<h3>" . $result["partNumber"] . "</h3>" ?>
                         </div>
                     </div>
@@ -215,7 +211,7 @@
                         <!-- product info -->
                         <div class="text">
                             <div class="title">
-                                <?php echo "<h4>" . $result['company'] . "</h4>" ?>
+                                <?php echo "<h4>" . $result['name'] . "</h4>" ?>
                                 <?php echo "<h3>" . $result['partNumber'] . "</h3>" ?>
                             </div>
                             <div class="details">
@@ -236,7 +232,7 @@
             <!-- footer navbar -->
             <nav class="botNav">
                 <ul>
-                    <li><a href="../htmlFiles/index.html">HOME</a></li>
+                    <li><a href="../index.html">HOME</a></li>
                     <li><a href="../htmlFiles/about.html">ABOUT</a></li>
                     <li><a href="../htmlFiles/contact.html#viewPortSpanner">ORDER</a></li>
                     <li><a href="../htmlFiles/products.html">PRODUCTS</a></li>
@@ -265,8 +261,8 @@
             </div>
         </footer>
         <!-- backToTop javascript link -->
-        <script src="../javascriptFiles/backToTop.js"></script>
-        <!-- modal javascript link -->
-        <script src="../javascriptFiles/modal.js"></script>
+        <script src="../../javascriptFiles/backToTop.js"></script>
+        <!-- modal.js link -->
+        <script src="../../javascriptFils/modal.js"></script>
     </body>
 </html>

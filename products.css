@@ -62,7 +62,7 @@ div.panel {
 
 /* plus/minus sign */
 button.accordion:after {
-    content: '\f055'; /* unicode plus sign */
+    content: '\f0fe'; /* unicode plus sign */
     font-family: "fontawesome";
     font-size: 5vh;
     float: right;
@@ -76,7 +76,7 @@ button.accordion:hover:after {
 }
 
 button.accordion.active:after {
-    content: '\f056'; /* unicode minus sign */
+    content: '\f146'; /* unicode minus sign */
     color: white;
 }
 

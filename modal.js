@@ -1,49 +1,28 @@
-// 
+
 // modal.js
-//
 
-var slideIndex = 1;
+// get modal from 'search.php' or 'searchByProduct.php'
+var modal = document.getElementsByClassName('modal');
 
-// reveal modal div
-function openModal() {
-    // block may not be the best way to dislay
-    // consider flex or something 
-    var items = document.getElementsByClassName('modal');
-    for (var i = 0; i < items.length; i++) {
-        items[i].style.display = 'block';
-    } 
-    
-    showSlides(slideIndex);
+// get the result box to open modal
+var btn = document.getElementsByClassName('imageContainer');
+
+// get 'x' button to close modal
+var span = document.getElementById('exitButton');
+
+// open modal when the result box is clicked
+btn.onclick = function() {
+    modal.style.display = "block";
 }
 
-// close modal
-function closeModal() {
-    document.getElementsByClassName('modal').style.display = 'none';
+// close modal when the 'x' gets clicked
+span.onclick = function() {
+    modal.style.display = "none";
 }
 
-// next/prev buttons
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName('modal');
-    var text = document.getElementsByClassName('text');
-    // slide cycle
-    if (n > slideIndex) {
-        slideIndex = 1;
+// when any space outside the modal is clicked, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.sytle.display = "none";
     }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    // hide all slides init
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-    }
-    // show current slide
-    // - 1 because array is 0-based 
-    slides[slideIndex - 1].style.display = 'block';
-    // get details/product info text for slide
-    text.innerHTML = slides[slideIndex - 1].getElementsByClassName('text');
 }

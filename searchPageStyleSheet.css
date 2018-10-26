@@ -42,7 +42,7 @@ body div#content {
     font-weight: lighter;
 }
 
-#content a{
+#content a {
     color: rgb(92, 30, 172);
     text-decoration: none;
 }
@@ -78,6 +78,7 @@ div#moreInfo h4 {
     height: 20vw;
     vertical-align: top;
     position: relative;
+    overflow: hidden;
 }
 
 .resultBox div.imageContainer {
@@ -86,6 +87,11 @@ div#moreInfo h4 {
     object-fit: cover;
     background-color: transparent;
     overflow: hidden;
+}
+
+.imageContainer img {
+    width: inherit;
+    height: inherit;
 }
 
 /* result overlay */
@@ -108,9 +114,9 @@ div#moreInfo h4 {
 
 /* overlay text */
 .overlay h3 {
-    padding: auto;
     font-size: 3vw;
     font-weight: lighter;
+    line-height: .8;
 }
 
 div.imageContainer:hover .overlay {
